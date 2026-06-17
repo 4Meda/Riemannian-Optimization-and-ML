@@ -1,0 +1,49 @@
+{
+  "step": 5,
+  "model": "hf-internal-testing/tiny-random-MistralForCausalLM",
+  "tokenizer": "hf-internal-testing/llama-tokenizer",
+  "profile": "mistral",
+  "rank": 4,
+  "rank_ratio": null,
+  "lowrank_checkpoint": "LowRankTraining/checkpoints/tiny_mistral_rank4/lowrank_state_dict.pt",
+  "dataset": "wikitext",
+  "dataset_config": "wikitext-2-raw-v1",
+  "split": "train",
+  "block_size": 128,
+  "batch_size": 2,
+  "gradient_accumulation_steps": 1,
+  "learning_rate": 5e-05,
+  "weight_decay": 0.01,
+  "history": [
+    {
+      "step": 1,
+      "loss": 10.370124816894531,
+      "perplexity": 31892.457438915833,
+      "elapsed_seconds": 0.1477830410003662
+    },
+    {
+      "step": 2,
+      "loss": 10.371042251586914,
+      "perplexity": 31921.730111625177,
+      "elapsed_seconds": 0.2738645076751709
+    },
+    {
+      "step": 3,
+      "loss": 10.362631797790527,
+      "perplexity": 31654.379720410638,
+      "elapsed_seconds": 0.3640449047088623
+    },
+    {
+      "step": 4,
+      "loss": 10.365056991577148,
+      "perplexity": 31731.240889370627,
+      "elapsed_seconds": 0.4492344856262207
+    },
+    {
+      "step": 5,
+      "loss": 10.373855590820312,
+      "perplexity": 32011.66321419163,
+      "elapsed_seconds": 0.543773889541626
+    }
+  ]
+}

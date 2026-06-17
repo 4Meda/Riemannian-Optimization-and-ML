@@ -1,0 +1,169 @@
+{
+  "step": 2,
+  "model": "hf-internal-testing/tiny-random-MistralForCausalLM",
+  "tokenizer": "hf-internal-testing/llama-tokenizer",
+  "profile": "mistral",
+  "rank": 4,
+  "rank_ratio": null,
+  "lowrank_checkpoint": "LowRankTraining/checkpoints/tiny_mistral_rank4/lowrank_state_dict.pt",
+  "resume_from_checkpoint": null,
+  "dataset": "wikitext",
+  "dataset_config": "wikitext-2-raw-v1",
+  "train_split": "train",
+  "validation_split": "validation",
+  "text_column": "text",
+  "block_size": 128,
+  "batch_size": 2,
+  "eval_batch_size": 2,
+  "gradient_accumulation_steps": 1,
+  "learning_rate": 5e-05,
+  "weight_decay": 0.01,
+  "history": [
+    {
+      "step": 1,
+      "type": "train",
+      "train_loss": 10.370124816894531,
+      "train_perplexity": 31892.457438915833,
+      "elapsed_seconds": 0.08627653121948242
+    },
+    {
+      "step": 2,
+      "type": "train",
+      "train_loss": 10.371042251586914,
+      "train_perplexity": 31921.730111625177,
+      "elapsed_seconds": 0.16866040229797363
+    },
+    {
+      "step": 2,
+      "type": "eval",
+      "eval_loss": 10.357909202575684,
+      "eval_perplexity": 31505.241335510458,
+      "elapsed_seconds": 0.20240139961242676
+    }
+  ],
+  "conversion": {
+    "parameter_count_before": {
+      "total": 2061408,
+      "trainable": 2061408
+    },
+    "parameter_count_after": {
+      "total": 2051608,
+      "trainable": 2051608
+    },
+    "num_lowrank_layers": 14,
+    "converted_modules": [
+      {
+        "name": "model.layers.0.self_attn.q_proj",
+        "in_features": 32,
+        "out_features": 32,
+        "rank": 4,
+        "dense_params": 1024,
+        "lowrank_params": 256
+      },
+      {
+        "name": "model.layers.0.self_attn.k_proj",
+        "in_features": 32,
+        "out_features": 16,
+        "rank": 4,
+        "dense_params": 512,
+        "lowrank_params": 192
+      },
+      {
+        "name": "model.layers.0.self_attn.v_proj",
+        "in_features": 32,
+        "out_features": 16,
+        "rank": 4,
+        "dense_params": 512,
+        "lowrank_params": 192
+      },
+      {
+        "name": "model.layers.0.self_attn.o_proj",
+        "in_features": 32,
+        "out_features": 32,
+        "rank": 4,
+        "dense_params": 1024,
+        "lowrank_params": 256
+      },
+      {
+        "name": "model.layers.0.mlp.gate_proj",
+        "in_features": 32,
+        "out_features": 37,
+        "rank": 4,
+        "dense_params": 1184,
+        "lowrank_params": 276
+      },
+      {
+        "name": "model.layers.0.mlp.up_proj",
+        "in_features": 32,
+        "out_features": 37,
+        "rank": 4,
+        "dense_params": 1184,
+        "lowrank_params": 276
+      },
+      {
+        "name": "model.layers.0.mlp.down_proj",
+        "in_features": 37,
+        "out_features": 32,
+        "rank": 4,
+        "dense_params": 1184,
+        "lowrank_params": 276
+      },
+      {
+        "name": "model.layers.1.self_attn.q_proj",
+        "in_features": 32,
+        "out_features": 32,
+        "rank": 4,
+        "dense_params": 1024,
+        "lowrank_params": 256
+      },
+      {
+        "name": "model.layers.1.self_attn.k_proj",
+        "in_features": 32,
+        "out_features": 16,
+        "rank": 4,
+        "dense_params": 512,
+        "lowrank_params": 192
+      },
+      {
+        "name": "model.layers.1.self_attn.v_proj",
+        "in_features": 32,
+        "out_features": 16,
+        "rank": 4,
+        "dense_params": 512,
+        "lowrank_params": 192
+      },
+      {
+        "name": "model.layers.1.self_attn.o_proj",
+        "in_features": 32,
+        "out_features": 32,
+        "rank": 4,
+        "dense_params": 1024,
+        "lowrank_params": 256
+      },
+      {
+        "name": "model.layers.1.mlp.gate_proj",
+        "in_features": 32,
+        "out_features": 37,
+        "rank": 4,
+        "dense_params": 1184,
+        "lowrank_params": 276
+      },
+      {
+        "name": "model.layers.1.mlp.up_proj",
+        "in_features": 32,
+        "out_features": 37,
+        "rank": 4,
+        "dense_params": 1184,
+        "lowrank_params": 276
+      },
+      {
+        "name": "model.layers.1.mlp.down_proj",
+        "in_features": 37,
+        "out_features": 32,
+        "rank": 4,
+        "dense_params": 1184,
+        "lowrank_params": 276
+      }
+    ]
+  }
+}

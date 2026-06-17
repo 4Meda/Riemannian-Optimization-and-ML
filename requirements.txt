@@ -1,0 +1,11 @@
+numpy
+scipy
+matplotlib
+alive-progress
+control
+transformers
+datasets
+accelerate
+evaluate
+torch
+torchvision

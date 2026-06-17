@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+
+# Generated experiment outputs
+*histories.json
+*.npy
+*.npz
+*.pkl
+*.pickle
+
+# Logs
+*.log
+
+# Model checkpoints and large binary artifacts
+checkpoints/
+LowRankTraining/checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
