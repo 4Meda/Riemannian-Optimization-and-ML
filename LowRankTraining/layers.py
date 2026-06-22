@@ -198,5 +198,3 @@ class LowRankLinear(nn.Module):
         )
 
 
-# Backward-compatible name with your previous implementation.
-LowRankLayer = LowRankLinear
