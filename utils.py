@@ -129,7 +129,7 @@ def wait_for_spacebar() -> None:
         termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
 
 
-def semiplotItCost(txt: str, *args, show: bool = True, save_path: str | Path | None = None):
+def semilog_plot_it_cost(txt: str, *args, show: bool = True, save_path: str | Path | None = None):
     """Plot one or more cost histories with a logarithmic y-axis.
 
     Args:
@@ -163,7 +163,7 @@ def semiplotItCost(txt: str, *args, show: bool = True, save_path: str | Path | N
     return fig, ax
 
 
-def logplotItCost(txt: str, *args, show: bool = True, save_path: str | Path | None = None):
+def loglog_plot_it_cost(txt: str, *args, show: bool = True, save_path: str | Path | None = None):
     """Plot one or more cost histories with logarithmic x- and y-axes.
 
     Args:
@@ -197,12 +197,3 @@ def logplotItCost(txt: str, *args, show: bool = True, save_path: str | Path | No
 
     return fig, ax
 
-
-def semilog_plot_it_cost(*args, **kwargs):
-    """Alias for ``semiplotItCost`` using a clearer snake_case name."""
-    return semiplotItCost(*args, **kwargs)
-
-
-def loglog_plot_it_cost(*args, **kwargs):
-    """Alias for ``logplotItCost`` using a clearer snake_case name."""
-    return logplotItCost(*args, **kwargs)
