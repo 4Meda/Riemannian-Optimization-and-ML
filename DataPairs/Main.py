@@ -314,7 +314,7 @@ class DataPairsExperiment(Optimizer):
             f"rank={self.rank}, n={self.n}"
         )
 
-        utils.semiplotItCost(
+        utils.semilog_plot_it_cost(
             title,
             (fix_it, fix_cost, "Fixed-step RGD"),
             (arm_it, arm_cost, "Armijo RGD"),
