@@ -1,6 +1,6 @@
 """Low-rank training utilities for PyTorch models."""
 
-from .layers import LowRankLinear, LowRankLayer
+from .layers import LowRankLinear
 from .models import FullRankNet, LowRankNet, convert_to_low_rank, get_model_parameters
 from .transformer_utils import (
     LowRankConversionReport,
@@ -12,7 +12,6 @@ from .transformer_utils import (
 
 __all__ = [
     "LowRankLinear",
-    "LowRankLayer",
     "FullRankNet",
     "LowRankNet",
     "convert_to_low_rank",

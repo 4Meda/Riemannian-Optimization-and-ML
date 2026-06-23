@@ -53,7 +53,7 @@ def set_seed(seed: int | None) -> None:
     np.random.seed(seed)
 
 
-def create_cai_matrix(rank: int, d1: int, d2: int) -> np.ndarray:
+def create_Cai_matrix(rank: int, d1: int, d2: int) -> np.ndarray:
     """Create a random rank-``rank`` matrix as in Cai et al. style examples.
 
     The matrix is generated as ``A @ B.T``, where ``A`` and ``B`` are Gaussian
@@ -66,11 +66,6 @@ def create_cai_matrix(rank: int, d1: int, d2: int) -> np.ndarray:
     B = matrix_B.random_matrix()
 
     return A @ B.T
-
-
-def create_Cai_matrix(rank: int, d1: int, d2: int) -> np.ndarray:
-    """Backward-compatible alias for ``create_cai_matrix``."""
-    return create_cai_matrix(rank, d1, d2)
 
 
 def create_mask_matrix(d1: int, d2: int, n: int) -> np.ndarray:
@@ -195,7 +190,7 @@ class MatrixCompletionExperiment(Optimizer):
 
         self.manifold = Manifold.SubspaceProjectionmanifold()
 
-        self.Ws = create_cai_matrix(self.rank, self.d1, self.d2)
+        self.Ws = create_Cai_matrix(self.rank, self.d1, self.d2)
         self.mask = create_mask_matrix(self.d1, self.d2, self.n)
 
         self._initialise_factors()
@@ -314,7 +309,7 @@ class MatrixCompletionExperiment(Optimizer):
             f"rank={self.rank}, n={self.n}"
         )
 
-        utils.semiplotItCost(
+        utils.semilog_plot_it_cost(
             title,
             (fix_it, fix_cost, "Fixed-step RGD"),
             (arm_it, arm_cost, "Armijo RGD"),

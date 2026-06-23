@@ -9,9 +9,9 @@ from torch import nn
 import torch.nn.functional as F
 
 try:
-    from .layers import LowRankLayer, LowRankLinear
+    from .layers import LowRankLinear
 except ImportError:  # Allows running this file directly.
-    from layers import LowRankLayer, LowRankLinear
+    from layers import LowRankLinear
 
 
 class FullRankNet(nn.Module):
@@ -115,7 +115,7 @@ class LowRankNet(nn.Module):
                 hidden_layers.append(nn.Linear(self.hidden_size, self.hidden_size))
             else:
                 hidden_layers.append(
-                    LowRankLayer(
+                    LowRankLinear(
                         self.hidden_size,
                         self.hidden_size,
                         self.low_rank,
